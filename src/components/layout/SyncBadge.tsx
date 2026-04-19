@@ -3,7 +3,7 @@
  * Shows real-time sync status in sidebar and header
  */
 
-import React from 'react';
+
 import { useSyncStore } from '../../store/syncStore';
 import { Cloud, CloudOff, RefreshCw, AlertTriangle, WifiOff } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
@@ -56,7 +56,7 @@ export function SyncBadge({ collapsed }: SyncBadgeProps) {
   };
 
   const config = getStatusConfig();
-  const Icon = config.icon;
+  // icon available via config.icon if needed
   const timeAgo = lastSyncAt ? formatDistanceToNow(lastSyncAt, { addSuffix: true }) : 'Never';
 
   if (collapsed) {

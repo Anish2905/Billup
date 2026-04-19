@@ -7,7 +7,7 @@ import { getPendingQueue, markInProgress, markCompleted, markFailed } from './qu
 import { executeTursoQuery } from '../db/turso';
 import { db } from '../db/dexie';
 import { generateId, now } from '../lib/uuid';
-import type { SyncQueueEntry } from '../lib/types';
+
 
 // Column mapping: camelCase (Dexie) → snake_case (Turso)
 const COLUMN_MAPS: Record<string, Record<string, string>> = {

@@ -2,7 +2,7 @@
  * Route definitions
  */
 
-import React from 'react';
+
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { AppLayout } from '../components/layout/AppLayout';
 import { InvoiceList } from '../features/invoices/InvoiceList';

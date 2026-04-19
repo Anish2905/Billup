@@ -6,7 +6,7 @@
 
 import { db } from '../db/dexie';
 import type { SyncQueueEntry } from '../lib/types';
-import type { EntityType, SyncOperation } from '../lib/constants';
+import type { EntityType } from '../lib/constants';
 
 /**
  * Get all pending items from the sync queue, ordered by creation time

@@ -3,7 +3,7 @@
  * Collapsible, icon-only mode, active route highlighting, sync badge in footer
  */
 
-import React from 'react';
+
 import { NavLink, useLocation } from 'react-router-dom';
 import {
   FileText, Users, Package, BarChart3, Settings,

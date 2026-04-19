@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import type { Company, Party, VoucherItemFormRow } from '../../lib/types';
 import { formatCurrency, formatIndianNumber } from '../../lib/indian-number';
 import { amountToWords } from '../../lib/amount-words';

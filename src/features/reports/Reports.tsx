@@ -3,13 +3,13 @@
  * All data sourced from IndexedDB (offline-capable)
  */
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../db/dexie';
 import { formatCurrency, formatIndianNumber } from '../../lib/indian-number';
-import { INDIAN_STATES } from '../../lib/constants';
+
 import { useSyncStore } from '../../store/syncStore';
-import { format, startOfMonth, endOfMonth, subMonths } from 'date-fns';
+import { format, startOfMonth, endOfMonth } from 'date-fns';
 import { BarChart3, AlertTriangle, Calendar, FileSpreadsheet, BookOpen, TrendingUp } from 'lucide-react';
 
 type ReportTab = 'sales' | 'gstr1' | 'ledger' | 'pnl';
@@ -29,7 +29,7 @@ export function Reports() {
     db.parties.filter((p) => !p.deletedAt).toArray()
   ) || [];
 
-  const voucherItems = useLiveQuery(() =>
+  const _voucherItems = useLiveQuery(() =>
     db.voucherItems.filter((vi) => !vi.deletedAt).toArray()
   ) || [];
 

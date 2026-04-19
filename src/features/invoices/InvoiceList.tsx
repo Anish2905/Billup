@@ -3,14 +3,14 @@
  * Dense table with sticky headers, status badges, filters
  */
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../db/dexie';
 import { formatCurrency } from '../../lib/indian-number';
 import { format } from 'date-fns';
-import { Plus, Search, FileText, Printer, Eye } from 'lucide-react';
-import type { Voucher, Party } from '../../lib/types';
+import { Plus, Search, FileText, Eye } from 'lucide-react';
+import type { Party } from '../../lib/types';
 
 export function InvoiceList() {
   const navigate = useNavigate();

@@ -14,7 +14,7 @@ import type { Company, Conflict } from '../../lib/types';
 import { format } from 'date-fns';
 import {
   Building2, RefreshCw, Cloud, CloudOff, AlertTriangle, Trash2,
-  Save, ArrowDownToLine, ArrowUpFromLine, CheckCircle2, XCircle,
+  Save, ArrowDownToLine, ArrowUpFromLine, CheckCircle2,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 

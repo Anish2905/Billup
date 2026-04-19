@@ -3,7 +3,7 @@
  * Page title, offline banner, quick actions
  */
 
-import React from 'react';
+
 import { useLocation } from 'react-router-dom';
 import { Menu, LogOut, WifiOff } from 'lucide-react';
 import { useUIStore } from '../../store/uiStore';
@@ -20,7 +20,7 @@ const PAGE_TITLES: Record<string, string> = {
 
 export function Header() {
   const location = useLocation();
-  const { setSidebarMobileOpen, sidebarCollapsed } = useUIStore();
+  const { setSidebarMobileOpen } = useUIStore();
   const { isOnline } = useSyncStore();
   const { logout } = useAuthStore();
 

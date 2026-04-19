@@ -3,7 +3,7 @@
  * Tally-inspired layout with GST computation, typeahead, keyboard shortcuts
  */
 
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, writeWithSync } from '../../db/dexie';
@@ -12,9 +12,9 @@ import { calculateLineGST, calculateInvoiceTotals, isInterState as checkInterSta
 import { formatCurrency, formatIndianNumber } from '../../lib/indian-number';
 import { amountToWords } from '../../lib/amount-words';
 import { getCurrentFinancialYear, INDIAN_STATES, GST_RATES } from '../../lib/constants';
-import type { Voucher, VoucherItem, Party, Item, Company, VoucherItemFormRow } from '../../lib/types';
+import type { Voucher, VoucherItem, Party, Item, VoucherItemFormRow } from '../../lib/types';
 import {
-  Plus, Trash2, Save, Printer, CheckCircle2, X, Search, Download
+  Plus, Trash2, Save, CheckCircle2, X, Search, Download
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { exportToPDF } from '../../lib/pdf';
@@ -28,7 +28,7 @@ function useTypeahead<T>(
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<T[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     if (!query.trim()) {

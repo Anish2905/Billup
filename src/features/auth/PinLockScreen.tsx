@@ -3,7 +3,7 @@
  * Full-screen overlay with 4-dot PIN input, numeric keypad, lockout logic
  */
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useAuthStore, enablePersistence, disablePersistence } from '../../store/authStore';
 import { Lock, Fingerprint, ShieldAlert } from 'lucide-react';
 import { APP_NAME } from '../../lib/constants';

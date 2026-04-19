@@ -2,7 +2,7 @@
  * Item Master — List + Form
  */
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, writeWithSync } from '../../db/dexie';
 import { generateId, now } from '../../lib/uuid';

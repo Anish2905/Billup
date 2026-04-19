@@ -2,13 +2,13 @@
  * Party Master — List + Form
  */
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, writeWithSync } from '../../db/dexie';
 import { generateId, now } from '../../lib/uuid';
 import { isValidGSTIN, stateCodeFromGSTIN } from '../../lib/gst';
 import { formatCurrency } from '../../lib/indian-number';
-import { INDIAN_STATES, PARTY_TYPES } from '../../lib/constants';
+import { INDIAN_STATES } from '../../lib/constants';
 import type { Party } from '../../lib/types';
 import { Plus, Search, Users, Edit2, Trash2, X, Save } from 'lucide-react';
 import toast from 'react-hot-toast';
